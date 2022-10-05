@@ -8,7 +8,7 @@
 # The below variables will be generated automatically
 #
 # Release name (automatically taken from this file's suffix)
-PRODUCT_RELEASE_NAME := $(lastword $(subst /, ,$(lastword $(subst _, ,$(firstword $(subst ., ,$(MAKEFILE_LIST)))))))
+PRODUCT_RELEASE_NAME := surya
 
 # Custom vendor used in build tree (automatically taken from this file's prefix)
 CUSTOM_VENDOR := $(lastword $(subst /, ,$(firstword $(subst _, ,$(firstword $(MAKEFILE_LIST))))))
@@ -21,13 +21,15 @@ BOARD_VENDOR := $(or $(word 2,$(subst /, ,$(firstword $(MAKEFILE_LIST)))),$(valu
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
-PRODUCT_NAME := $(CUSTOM_VENDOR)_$(PRODUCT_RELEASE_NAME)
+PRODUCT_NAME := twrp_$(PRODUCT_RELEASE_NAME)
+BOARD_VENDOR := Xiaomi
+PRODUCT_BRAND := Xiaomi
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
-PRODUCT_MANUFACTURER := $(BOARD_VENDOR)
+PRODUCT_MANUFACTURER := Xiaomi
 
 # Device path for OEM device tree
-DEVICE_PATH := device/$(BOARD_VENDOR)/$(PRODUCT_DEVICE)
+DEVICE_PATH := device/xiaomi/surya
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, $(DEVICE_PATH)/device.mk)
+$(call inherit-product, device/xiaomi/surya/device.mk)

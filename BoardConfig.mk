@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/xiaomi/surya
+
 # Broken rules
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -149,8 +151,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_NTFS_3G := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_Y_OFFSET := 91
-TW_H_OFFSET := -91
 TARGET_USES_MKE2FS := true
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
@@ -171,3 +171,19 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_LPDUMP := true
 TW_EXCLUDE_LPTOOLS := true
 TW_INCLUDE_PYTHON := true
+
+
+#SHRP-specific lines
+SHRP_PATH := device/xiaomi/surya
+SHRP_MAINTAINER := Ardjlon
+SHRP_DEVICE_CODE := surya
+SHRP_OFFICIAL := true
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /sdcard1
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+SHRP_FLASH_MAX_BRIGHTNESS := 255
+SHRP_REC_TYPE := NORMAL
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_DEVICE_TYPE := A_Only
+SHRP_DARK := true
